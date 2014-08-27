@@ -1,0 +1,15 @@
+<h1> Photo Sharing! </h1>
+
+<%= link_to "Upload Photo", new_photo_path %><br>
+
+
+<% @photos.each do |photo| %>
+  <% if photo.image? %>
+    <%= image_tag photo.image %>
+  <% else %>
+  <h1> <%= photo.url %> </h1>
+    <%= image_tag photo.url %>
+  <% end %>
+
+<% end %>
+

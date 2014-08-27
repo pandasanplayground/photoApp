@@ -1,0 +1,19 @@
+<h1> Enter a URL </h1>
+<!-- form here -->
+
+<%= form_for @photo do |f| %>
+  <%= f.label :url %>
+  <%= f.text_field :url %><br>
+
+  <%= f.submit %>
+<% end %>
+
+
+
+<h1> Or <h1>
+<h1> Upload an Image </h1>
+<%= form_for @photo do |f| %>
+  <%= f.file_field :image %> <br>
+
+  <%= f.submit %>
+<% end %>

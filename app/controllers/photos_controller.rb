@@ -1,5 +1,7 @@
 class PhotosController < ApplicationController
 
+  before_action :authenticate_user!, :only => [:new, :create, :show]
+
   def new
     @photo = Photo.new
   end
@@ -13,8 +15,9 @@ class PhotosController < ApplicationController
       uploader = PhotoUploader.new
       uploader.store!(new_photo.image)
       new_photo.save
-      binding.pry
     end
+
+    redirect_to root_path
   end
 
   def show
